@@ -125,7 +125,7 @@ router.get('/messages', async(req,res) => {
     const sql = "SELECT * FROM reveal_confirm";
     db.query(sql,[], (err,result) => {
         if(err) res.status(500).json({'error':err})
-        res.json({list: result});
+        res.json({data: result});
     })
 });
 
