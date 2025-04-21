@@ -15,7 +15,7 @@ let conections = [
   }
 ]
 
-const db = mysql.createConnection(conections[0]);
+const db = mysql.createConnection(conections[1]);
 
 db.connect((err) => {
   if (err) {
