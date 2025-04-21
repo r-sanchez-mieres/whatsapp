@@ -129,6 +129,17 @@ router.get('/messages', async(req,res) => {
     })
 });
 
+router.delete('/reveal/:id', async (req, res) => {
+    
+    const { params : { id } } = req
+    const sql = "DELETE FROM reveal_confirm WHERE id = ?";
+    db.query(sql, [ id ], (err, result) => {
+        if( err ) res.status(422).json({'error' : err})
+        res.json({'data' : result})
+    })
+
+})
+
 const has_response = ( number ) => {
     const sql = "SELECT 1 FROM reveal_confirm WHERE `number` = ? LIMIT 1"
     

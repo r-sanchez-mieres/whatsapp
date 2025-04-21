@@ -5,7 +5,7 @@ let conections = [
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'railway'
+    database: 'wapp'
   },
   {
     host: 'database-1.cahicyc4kx6o.us-east-1.rds.amazonaws.com',
@@ -15,7 +15,7 @@ let conections = [
   }
 ]
 
-const db = mysql.createConnection(conections[1]);
+const db = mysql.createConnection(conections[0]);
 
 db.connect((err) => {
   if (err) {
